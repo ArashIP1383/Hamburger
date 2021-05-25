@@ -1,0 +1,187 @@
+:root{
+    --marginandgap: 1%;
+    --animduration: 1s;
+    --colorhamburger: rgb(246, 246, 246);
+    --sidebarcolor: rgb(30, 30, 30);
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(56, 56, 56);
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.cards{
+    margin: var(--marginandgap);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr var(--marginandgap);
+    place-items: center;
+    row-gap: var(--marginandgap);
+    column-gap: var(--marginandgap);
+}
+
+.card{
+    color: aliceblue;
+    background-color: hsl(0, 0%, 15%);
+    max-width: 100%;
+    min-height: 98%;
+    max-height: 100%;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    box-shadow: 50% 50% 50px rgba(0, 0, 0, 0.64);
+    z-index: 6;
+}
+
+.one{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.two{
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+
+.three{
+    grid-row: 1/2;
+    grid-column: 3/4;
+}
+
+.four{
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.five{
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.six{
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+
+.img{
+    max-width: 100%;
+    max-height: 70%;
+}
+
+.sidebarclose{
+    margin: 0;
+    width: 0;
+    height: 100%;
+    z-index: 10;
+    background-color: var(--sidebarcolor);
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all var(--animduration) ease-in-out;
+}
+
+.sidebarclose ul{
+    margin-top: 50px;
+    transform: translate(-110px,0);
+    transition: all var(--animduration) ease-in-out;
+}
+
+.sidebar ul{
+    margin-top: 50px;
+    transition: all var(--animduration) ease;
+}
+
+#side ul li{
+    color: aliceblue;
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+#side ul{
+    padding: 0;
+}
+
+
+.sidebar{
+    margin: 0;
+    width: 30%;
+    height: 100%;
+    z-index: 10;
+    background-color: var(--sidebarcolor);
+    display: inline-block;
+    transition: all var(--animduration) ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 11;
+    width: 2.5rem;
+    height: 13.8px;
+    cursor: pointer;
+    transition: all calc(var(--animduration) - 0.3s) ease-in-out; 
+    margin-top: 2%;
+    margin-left: 1%; 
+}
+
+.hamburger-btn{
+    width: 2.5rem;
+    height: 0.3rem;
+    background-color: var(--colorhamburger);
+    border-radius: 5px;
+    transition: all calc(var(--animduration) - 0.3s) ease-in-out;
+}
+
+.hamburger-btn::after,
+.hamburger-btn::before{
+    content: '';
+    position: absolute;
+    width: 2.5rem;
+    height: .3rem;
+    background-color: var(--colorhamburger);
+    border-radius: 5px;
+    transition: all calc(var(--animduration) - 0.3s) ease-in-out; 
+}
+
+.hamburger-btn::before{
+    transform: translateY(-12px);
+}
+
+.hamburger-btn::after{
+    transform: translateY(12px);
+}
+
+.hamburger.open .hamburger-btn{
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.hamburger.open .hamburger-btn::before{
+    transform: translate(40px , 0) rotate(45deg);
+}
+
+.hamburger.open .hamburger-btn::after{
+    transform: translate(40px , 0) rotate(-45deg);
+}
