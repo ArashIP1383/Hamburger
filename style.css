@@ -88,7 +88,7 @@ body{
 
 .sidebarclose{
     height: 100%;
-    width: 0;
+    width: 0 ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,7 +238,7 @@ body{
     .cards{
         width: max-content;
         height: max-content;
-        grid-template-columns: auto auto var(--marginandgap);
+        grid-template-columns: var(--marginandgap) auto var(--marginandgap);
         grid-template-rows: repeat(6,auto);
         /* column-gap: 0;
         row-gap: var(--marginandgap) + 2%); */
@@ -254,32 +254,40 @@ body{
 
     .one{
         grid-row: 1/2;
-        grid-column: 1/2;
+        grid-column: 2/3;
     }
     
     .two{
         grid-row: 2/3;
-        grid-column: 1/2;
+        grid-column: 2/3;
     }
     
     .three{
         grid-row: 3/4;
-        grid-column: 1/2;
+        grid-column: 2/3;
     }
     
     .four{
         grid-row: 4/5;
-        grid-column: 1/2;
+        grid-column: 2/3;
     }
     
     .five{
         grid-row: 5/6;
-        grid-column: 1/2;
+        grid-column: 2/3;
     }
     
     .six{
         grid-row: 6/7;
-        grid-column: 1/2;
+        grid-column: 2/3;
     }
 
+    #side{
+        position: fixed;
+    }
+
+    .sidebar{
+        min-width: 60% !important;
+            
+    }
 }
