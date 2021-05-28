@@ -130,6 +130,7 @@ body{
     margin: 0 !important;
 }
 
+
 .sidebar{
     display: flex;
     justify-content: center;
@@ -218,4 +219,9 @@ body{
     position: absolute;
     left: -30%;
     bottom: 10%;
+}
+
+#side{
+    /* position: absolute; */
+    max-width: 25%;
 }
