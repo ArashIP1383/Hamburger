@@ -4,6 +4,10 @@
     --colorhamburger: rgb(246, 246, 246);
     --sidebarcolor: rgb(30, 30, 30);
     --animfunction: ease-in-out;
+    --body-background: rgb(56, 56, 56);
+    --card-background: hsl(0, 0%, 15%);
+    --btn-light-color: white;
+    --text-color: aliceblue;
 }
 
 body{
@@ -11,8 +15,9 @@ body{
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(56, 56, 56);
+    background-color: var(--body-background);
     overflow: hidden;
+    transition: all var(--animduration) var(--animfunction);
 }
 
 .container{
@@ -37,7 +42,7 @@ body{
 
 .card{
     padding: var(--marginandgap);
-    color: aliceblue;
+    color: var(--text-color);
     background-color: hsl(0, 0%, 15%);
     max-width: 100%;
     min-width: 80%;
@@ -48,6 +53,7 @@ body{
     place-items: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     z-index: 6;
+    transition: all var(--animduration) var(--animfunction);
 }
 
 .one{
@@ -117,7 +123,7 @@ body{
 }
 
 #side ul li{
-    color: aliceblue;
+    color: var(--text-color);
     list-style: none;
     text-align: center;
     text-decoration: none;
@@ -125,6 +131,7 @@ body{
     margin-top: 50px;
     font-size: 20px;
     font-weight: 700;
+    transition: all var(--animduration) var(--animfunction);
 }
 
 #side ul{
@@ -199,6 +206,7 @@ body{
 #ham-btn{
     width: max-content;
     height: max-content;
+    
 }
 
 #theme-btn{
@@ -206,16 +214,23 @@ body{
     margin: 0;
     align-self: flex-end;
     position: absolute !important;
-    bottom: 0 !important;
+    bottom: 1% !important;
     transition: all 1s ease-in-out !important;
+
+}
+
+#theme-btn p{
+    word-wrap: normal;
+    display: inline-block;
+    margin: 0;
 }
 
 .btn-light{
-    color: white;
+    color: var(--btn-light-color);
 }
 
 .btn-dark{
-    color: aliceblue;
+    color: var(--btn-light-color);
 }
 
 #i{
@@ -284,10 +299,22 @@ body{
 
     #side{
         position: fixed;
+        max-width: 60%;
     }
 
     .sidebar{
-        min-width: 60% !important;
-            
+        width: 60% !important;
+        transition: all var(--animduration) var(--animfunction);  
+    }
+
+    .hamburger{
+        margin-top: 6% !important;
+        margin-left: 3% !important;
+    }
+
+    .hamburger-btn,.hamburger-btn::after,.hamburger-btn::before{
+        max-width: 2rem;
+        max-height: 0.15rem;
     }
 }
+
